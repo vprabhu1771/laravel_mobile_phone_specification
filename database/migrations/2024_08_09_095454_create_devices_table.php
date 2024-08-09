@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('brand_id')->nullable();
+
+            $table->string('model_number');
+
+            $table->string('series');
+
+            $table->string('name');            
+
+            $table->string('description');
+
             $table->timestamps();
         });
     }
