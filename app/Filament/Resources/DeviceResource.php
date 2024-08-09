@@ -41,6 +41,13 @@ class DeviceResource extends Resource
                     ->schema([
                         Forms\Components\TextInput::make('key'),
                         Forms\Components\TextInput::make('value'),
+                    ]),
+                Forms\Components\Repeater::make('features')
+                    ->relationship()
+                    ->columnSpan('full')
+                    // ->columns(2)
+                    ->schema([
+                        Forms\Components\TextInput::make('feature'),                        
                     ])
             ]);
     }
