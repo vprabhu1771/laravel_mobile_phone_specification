@@ -33,7 +33,8 @@ class DeviceResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                Forms\Components\TextInput::make('description')
+                Forms\Components\TextInput::make('description'),                    
+                Forms\Components\KeyValue::make('specifications')
                     ->required(),
             ]);
     }
