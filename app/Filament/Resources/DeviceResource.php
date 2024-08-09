@@ -23,8 +23,10 @@ class DeviceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('brand_id')
-                    ->numeric(),
+                Forms\Components\Select::make('brand_id')
+                    ->preload()
+                    ->searchable()
+                    ->relationship('brand', 'name'),
                 Forms\Components\TextInput::make('model_number')
                     ->required(),
                 Forms\Components\TextInput::make('series')
