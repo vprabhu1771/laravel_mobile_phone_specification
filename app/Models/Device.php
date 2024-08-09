@@ -21,4 +21,21 @@ class Device extends Model
     {
         return $this->belongsTo(Brand::class);
     }
+
+    
+    /**
+     * Get the specifications for the device.
+     */
+    public function specifications()
+    {
+        return $this->hasMany(Specification::class);
+    }
+
+    /**
+     * Get the features for the device.
+     */
+    public function features()
+    {
+        return $this->hasMany(Feature::class);
+    }
 }
