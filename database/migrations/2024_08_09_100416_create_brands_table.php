@@ -18,6 +18,8 @@ return new class extends Migration
 
             $table->string('image_path')->nullable();
 
+            $table->string('description')->nullable();
+
             $table->timestamps();
         });
     }
