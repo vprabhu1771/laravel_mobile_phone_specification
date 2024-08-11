@@ -18,7 +18,8 @@ class Device extends Model
         'series',
         'name',
         'description',
-        'image_path'
+        'image_path',
+        'asin'
     ];
 
     public function GetImagePath()

@@ -28,6 +28,14 @@ return new class extends Migration
 
             $table->string('image_path')->default('no_image_available.jpg')->nullable();
 
+            // ASIN for the product
+            // a ten-digit alphanumeric code that identifies products on Amazon
+            $table->string('asin')->nullable();
+
+            $table->string('amazon_url')->nullable();
+
+            $table->string('ifixit_url')->nullable();
+
             $table->timestamps();
         });
     }
