@@ -11,7 +11,7 @@ class Brand extends Model
 
     protected $fillable = [
         'name',
-        'image_path'        
+        'image_path'
     ];
 
     public function devices()

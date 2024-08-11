@@ -35,6 +35,18 @@ class BrandSeeder extends Seeder
                 'name' => 'Sony',
                 'description' => 'Sony Corporation is a Japanese multinational conglomerate known for its electronics, including smartphones and gaming consoles.'
             ],
+            [
+                'name' => 'Dell',
+                'description' => 'Sony Corporation is a Japanese multinational conglomerate known for its electronics, including smartphones and gaming consoles.'
+            ],
+            [
+                'name' => 'Corsair',
+                'description' => 'Sony Corporation is a Japanese multinational conglomerate known for its electronics, including smartphones and gaming consoles.'
+            ],
+            [
+                'name' => 'ASUS',
+                'description' => 'Sony Corporation is a Japanese multinational conglomerate known for its electronics, including smartphones and gaming consoles.'
+            ],
         ];
 
         foreach ($brands as $row) 
