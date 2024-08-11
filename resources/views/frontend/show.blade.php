@@ -16,13 +16,16 @@
         padding: 20px;
         border-radius: 8px;
     }
+    .specifications-table, .features-table {
+        margin-top: 20px;
+    }
 </style>
 
 <div class="container my-5">
     <div class="row">
         <!-- Product Image -->
         <div class="col-md-6">
-            <img src="{{ $product->GetImagePath() }}" alt="{{ $product->name }}" class="img-fluid">
+            <img src="{{ $product->GetImagePath() }}" alt="{{ $product->name }}" class="img-fluid product-image">
         </div>
         
         <!-- Product Details -->
@@ -31,10 +34,44 @@
             <p class="lead">{{ $product->description }}</p>
             <h4 class="text-success mb-3">${{ number_format($product->price, 2) }}</h4>
 
-            
-
             <p><strong>Category:</strong> {{ $product->category->name }}</p>
             <p><strong>Brand:</strong> {{ $product->brand->name }}</p>
+
+            <!-- Specifications Table -->
+            <h5 class="mt-4">Specifications</h5>
+            <table class="table table-bordered specifications-table">
+                <thead>
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($product->specifications as $spec)
+                        <tr>
+                            <td>{{ $spec->key }}</td>
+                            <td>{{ $spec->value }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+
+            <!-- Features Table -->
+            <h5 class="mt-4">Features</h5>
+            <table class="table table-bordered features-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($product->features as $feature)
+                        <tr>
+                            <td>{{ $feature->feature }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
