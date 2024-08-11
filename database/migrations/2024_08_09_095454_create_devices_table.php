@@ -24,6 +24,8 @@ return new class extends Migration
 
             $table->string('description');
 
+            $table->string('image_path')->default('no_image_available.jpg')->nullable();
+
             $table->timestamps();
         });
     }
