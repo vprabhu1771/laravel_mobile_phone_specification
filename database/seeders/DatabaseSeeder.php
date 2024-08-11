@@ -24,5 +24,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(BrandSeeder::class);
+
+        $this->call(DeviceSeeder::class);
+
+        $this->call(Specification::class);
+
+        $this->call(FeatureSeeder::class);
     }
 }
