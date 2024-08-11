@@ -18,9 +18,9 @@ class CategorySeeder extends Seeder
         $categories = [
             ['name' => 'Laptop'],
             ['name' => 'Desktop'],
-            ['name' => 'Ram'],
-            ['name' => 'Mother Board'],
-            ['name' => 'Smart Phone'],
+            ['name' => 'RAM'],
+            ['name' => 'Motherboard'],
+            ['name' => 'Smartphone'],
         ];
 
         foreach ($categories as $row) 
