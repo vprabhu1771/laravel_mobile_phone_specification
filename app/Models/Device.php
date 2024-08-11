@@ -19,7 +19,9 @@ class Device extends Model
         'name',
         'description',
         'image_path',
-        'asin'
+        'asin',
+        'amazon_url',
+        'ifixit_url'
     ];
 
     public function GetImagePath()
