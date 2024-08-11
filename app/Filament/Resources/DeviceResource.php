@@ -56,7 +56,7 @@ class DeviceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('brand_id')
+                Tables\Columns\TextColumn::make('brand.name')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('model_number')
