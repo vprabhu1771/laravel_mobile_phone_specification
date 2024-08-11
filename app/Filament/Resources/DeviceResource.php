@@ -52,7 +52,9 @@ class DeviceResource extends Resource
                     // ->columns(2)
                     ->schema([
                         Forms\Components\TextInput::make('feature'),                        
-                    ])
+                    ]),
+                Forms\Components\TextInput::make('asin'),                    
+                Forms\Components\TextInput::make('amazon_url')                    
             ]);
     }
 
