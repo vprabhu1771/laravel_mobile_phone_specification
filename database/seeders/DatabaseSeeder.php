@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(DeviceSeeder::class);
 
-        $this->call(Specification::class);
+        $this->call(SpecificationSeeder::class);
 
         $this->call(FeatureSeeder::class);
     }
