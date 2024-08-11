@@ -8,6 +8,8 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Device;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
 class HomeController extends Controller
 {
     //
@@ -37,5 +39,15 @@ class HomeController extends Controller
         return view('frontend/home', $data);
     }
 
+    public function show($id)
+    {
+        try {
+            $product = Device::findOrFail($id);
+            return view('frontend.show', compact('product'));
+        } catch (ModelNotFoundException $e) {
+            // Handle the case where the product is not found
+            return redirect()->route('products.index')->with('error', 'Product not found.');
+        }
+    }
     
 }
