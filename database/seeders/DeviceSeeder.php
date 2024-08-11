@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+use App\Models\Brand;
 use App\Models\Device;
 
 class DeviceSeeder extends Seeder
@@ -15,6 +16,8 @@ class DeviceSeeder extends Seeder
     public function run(): void
     {
         //
+        $brands = Brand::all();
+
         $devices = [
             [
                 'brand_id' => $brands->where('name', 'Samsung')->first()->id,
@@ -46,7 +49,7 @@ class DeviceSeeder extends Seeder
             ],
             [
                 'brand_id' => $brands->where('name', 'Corsair')->first()->id,
-                'model_number' => 'Vengeance LPX',
+                'model_number' => 'Vengeance LPX 16GB',
                 'series' => 'RAM',
                 'name' => 'Corsair Vengeance LPX 16GB',
                 'description' => 'Corsair Vengeance LPX 16GB DDR4 RAM.'
@@ -55,7 +58,7 @@ class DeviceSeeder extends Seeder
 
         foreach ($devices as $row) 
         {
-            Devices::create($row);
+            Device::create($row);
         }
     }
 }
