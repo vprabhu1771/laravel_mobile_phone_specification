@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
 
+            $table->unsignedBigInteger('category_id')->nullable();
+
             $table->unsignedBigInteger('brand_id')->nullable();
 
             $table->string('model_number');
