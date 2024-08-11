@@ -72,6 +72,49 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <!-- Price Comparison Table -->
+            <h5 class="mt-4">Price Comparison</h5>
+            <table class="table table-bordered price-comparison-table">
+                <thead>
+                    <tr>
+                        <th>Retailer</th>
+                        <th>Price</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                        $hasPrice = false;
+                    @endphp
+                    @if($product->amazon_price)
+                        <tr>
+                            <td>Amazon</td>
+                            <td>${{ number_format($product->amazon_price, 2) }}</td>
+                            <td><a href="{{ $product->amazon_url }}" target="_blank" class="btn btn-info btn-sm">View on Amazon</a></td>
+                        </tr>
+                        @php
+                            $hasPrice = true;
+                        @endphp
+                    @endif
+                    @if($product->ifixit_price)
+                        <tr>
+                            <td>iFixit</td>
+                            <td>${{ number_format($product->ifixit_price, 2) }}</td>
+                            <td><a href="{{ $product->ifixit_url }}" target="_blank" class="btn btn-info btn-sm">View on iFixit</a></td>
+                        </tr>
+                        @php
+                            $hasPrice = true;
+                        @endphp
+                    @endif
+
+                    @if(!$hasPrice)
+                        <tr>
+                            <td colspan="3" class="text-center">No Data Available</td>
+                        </tr>
+                    @endif
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
