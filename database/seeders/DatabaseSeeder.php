@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('admin')
         ]);
 
+        $this->call(CategorySeeder::class);
+
         $this->call(BrandSeeder::class);
 
         $this->call(DeviceSeeder::class);
