@@ -23,6 +23,10 @@ class DeviceResource extends Resource
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('category_id')
+                    ->preload()
+                    ->searchable()
+                    ->relationship('category', 'name'),
                 Forms\Components\Select::make('brand_id')
                     ->preload()
                     ->searchable()
