@@ -85,22 +85,23 @@
                 </thead>
                 <tbody>
                     @php
+                        // Initialize the hasPrice variable
                         $hasPrice = false;
                     @endphp
-                    @if($product->amazon_price)
+                    @if($amazon_price)
                         <tr>
                             <td>Amazon</td>
-                            <td>${{ number_format($product->amazon_price, 2) }}</td>
+                            <td>${{ number_format($amazon_price, 2) }}</td>
                             <td><a href="{{ $product->amazon_url }}" target="_blank" class="btn btn-info btn-sm">View on Amazon</a></td>
                         </tr>
                         @php
                             $hasPrice = true;
                         @endphp
                     @endif
-                    @if($product->ifixit_price)
+                    @if($ifixit_price)
                         <tr>
                             <td>iFixit</td>
-                            <td>${{ number_format($product->ifixit_price, 2) }}</td>
+                            <td>${{ number_format($ifixit_price, 2) }}</td>
                             <td><a href="{{ $product->ifixit_url }}" target="_blank" class="btn btn-info btn-sm">View on iFixit</a></td>
                         </tr>
                         @php

@@ -42,8 +42,16 @@ class HomeController extends Controller
     public function show($id)
     {
         try {
-            $product = Device::findOrFail($id);
-            return view('frontend.show', compact('product'));
+            
+            $data = [
+                'product' => Device::findOrFail($id),
+                'amazon_price' => 100,
+                'ifixit_price' => 0,
+            ];
+
+            // dd($data);
+
+            return view('frontend.show', $data);
         } catch (ModelNotFoundException $e) {
             // Handle the case where the product is not found
             return redirect()->route('products.index')->with('error', 'Product not found.');
